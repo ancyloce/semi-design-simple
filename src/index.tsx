@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import history from './history';
+import App from './App';
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-    <React.StrictMode>
+    // semi design is buggy, turn off strict mode temporarily
+    // <React.StrictMode>
+    <HistoryRouter history={history}>
         <App />
-    </React.StrictMode>
+    </HistoryRouter>
+    // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
