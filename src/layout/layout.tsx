@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, Breadcrumb, Button, Layout, Nav } from '@douyinfe/semi-ui';
 import { IconBell, IconBytedanceLogo, IconHelpCircle, IconSemiLogo } from '@douyinfe/semi-icons';
 import { routes } from '../routes';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 // Generate menus from routes
 function getMenus(data: any[]) {
@@ -21,7 +21,14 @@ function getMenus(data: any[]) {
 }
 
 const PageLayout = () => {
+    const navigate = useNavigate();
     const { Header, Footer, Sider, Content } = Layout;
+
+    const onSelect = (key: number | string) => {
+        if (key) {
+            navigate(`${key}`, {});
+        }
+    };
 
     return (
         <Layout style={{ border: '1px solid var(--semi-color-border)' }}>
@@ -78,6 +85,7 @@ const PageLayout = () => {
                         style={{ maxWidth: 220, height: '100%' }}
                         defaultSelectedKeys={['Home']}
                         items={getMenus(routes)}
+                        onSelect={({ itemKey }) => onSelect(itemKey)}
                         footer={{
                             collapseButton: true,
                         }}

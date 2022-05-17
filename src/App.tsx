@@ -31,7 +31,14 @@ function App() {
         <Routes>
             <Route path="/" element={<PageLayout />}>
                 {flattenRoutes.map((route, index) => {
-                    return <Route key={index} path={`/${route.key}`} element={route.component} />;
+                    return (
+                        <Route
+                            key={index}
+                            index={route?.index}
+                            path={`/${route?.key}`}
+                            element={route?.component}
+                        />
+                    );
                 })}
             </Route>
         </Routes>

@@ -8,6 +8,7 @@ export const routes = [
         icon: <IconElementStroked />,
         children: [
             {
+                index: true,
                 name: '工作台',
                 key: 'dashboard/workplace',
                 componentPath: 'workplace',
