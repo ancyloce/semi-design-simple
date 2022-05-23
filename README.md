@@ -1,13 +1,10 @@
 <div align="center">
-  <h1>React Simple Template</h1>
+  <h1>Semi Simple Template</h1>
 </div>
 
 <div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app),
-adding [Vite](https://vitejs.dev/) to the development environment improves development time, use
-[Rslint](https://eslint.org/)/[Emoji Commit](https://github.com/arvinxx/gitmoji-commit-workflow/) to standardize the
-development process.
+This is a simple template for admin based on [semi design](https://semi.design/).
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/arco-design/arco-design-pro/blob/main/LICENSE)
 
@@ -22,15 +19,13 @@ English
 ## 💡 ️Quick Overview
 
 ```shell
-git clone https://github.com/ancyloce/react-simple-template.git <my-project>
+git clone https://github.com/ancyloce/semi-design-simple.git <my-project>
 ```
 
 ## ✨ Features
 
+-   **Route** - Integrated [React Route V6](https://reactrouter.com/)
 -   **Vite** - Faster development compilation time
--   **Norm** - Use [Eslint](https://eslint.org/)/[Prettier](https://prettier.io/)/[Stylelint](https://stylelint.io/)
-    unified coding specification
--   **Gitmoji** - Beautify commit with [emoji](https://gitmoji.dev/)
 
 ## 📦️ File Structure
 
