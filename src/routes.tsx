@@ -1,6 +1,8 @@
 import React from 'react';
 import { IconElementStroked } from '@douyinfe/semi-icons';
 
+export const defaultRoute = 'dashboard/workplace';
+
 export const routes = [
     {
         name: '仪表盘',

@@ -1,9 +1,8 @@
 import React, { useMemo } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import PageLayout from './layout/layout';
-import './App.css';
 import LazyLoad from './utils/lazyload';
-import { routes } from './routes';
+import { defaultRoute, routes } from './routes';
 
 //  Generate routes
 function getFlattenRoutes() {
@@ -30,6 +29,7 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<PageLayout />}>
+                <Route index element={<Navigate to={`/${defaultRoute}`} replace />} />
                 {flattenRoutes.map((route, index) => {
                     return (
                         <Route
