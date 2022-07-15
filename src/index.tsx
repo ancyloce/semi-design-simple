@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import reportWebVitals from './reportWebVitals';
-import history from './history';
+
 import App from './App';
 import './index.css';
 
+const history = createBrowserHistory({ window });
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     // semi design is buggy, turn off strict mode temporarily
