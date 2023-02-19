@@ -1,5 +1,11 @@
 import React, { useMemo } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import {
+    createBrowserRouter,
+    createRoutesFromElements,
+    Navigate,
+    Route,
+    RouterProvider,
+} from 'react-router-dom';
 import PageLayout from './layout/layout';
 import LazyLoad from './utils/lazyload';
 import { defaultRoute, routes } from './routes';
@@ -23,11 +29,15 @@ function getFlattenRoutes() {
     return res;
 }
 
+function Fallback() {
+    return <p>Performing initial data load</p>;
+}
+
 function App() {
     const flattenRoutes = useMemo(() => getFlattenRoutes() || [], []);
 
-    return (
-        <Routes>
+    const router = createBrowserRouter(
+        createRoutesFromElements(
             <Route path="/" element={<PageLayout />}>
                 <Route index element={<Navigate to={`/${defaultRoute}`} replace />} />
                 {flattenRoutes.map((route, index) => {
@@ -41,8 +51,10 @@ function App() {
                     );
                 })}
             </Route>
-        </Routes>
+        )
     );
+
+    return <RouterProvider router={router} fallbackElement={<Fallback />} />;
 }
 
 export default App;
